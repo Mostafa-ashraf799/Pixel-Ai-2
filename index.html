@@ -748,7 +748,7 @@ const TOOLS_REGISTRY=[
 ];
 
 // ═══ STATE ═══
-const DCFG={apis:{gemini:'',anthropic:'',openai:'',openrouter:''},ollama:{url:'http://localhost:11434',model:'llama3'},supabase:{url:'',key:''},user:{name:'',job:'',goals:'',prefs:'',location:'',personality:'',persona:'friendly'},autonomy:'assistant',model_id:'openai/gpt-5',or_custom:'',voice:{lang:'ar-SA',rate:'1.1',tts:'never',wake:'مساعدي'},bot:{name:'مساعدي',tagline:'مساعدك الذكي الشخصي',gender:'neutral',age:'',lang:'ar',greeting:'',expertise:'',avoid:''}};
+const DCFG={apis:{gemini:'',anthropic:'',openai:'',openrouter:''},ollama:{url:'http://localhost:11434',model:'llama3'},supabase:{url:'',key:''},user:{name:'',job:'',goals:'',prefs:'',location:'',personality:'',persona:'friendly'},autonomy:'assistant',model_id:'openai/gpt-5',or_custom:'',voice:{lang:'ar-SA',rate:'1.1',tts:'never',wake:'Pixel'},bot:{name:'Pixel',tagline:'مساعدك الذكي الشخصي',gender:'neutral',age:'',lang:'ar',greeting:'',expertise:'',avoid:''}};
 function loadCfg(){
   try{
     const saved=JSON.parse(localStorage.getItem('ass_cfg_v5')||'{}');
@@ -1043,7 +1043,7 @@ function buildSys(){
   const p=cfg.user;
   const mc=memories.length?`\nما تعرفه:\n${memories.map(m=>'- '+m.content).join('\n')}`:'';
   const bot=cfg.bot||{};
-  const botName=bot.name||'مساعدي';
+  const botName=bot.name||'Pixel';
   const avoidTxt=bot.avoid?`\nتجنب: ${bot.avoid}`:'';
   const expertTxt=bot.expertise?`\nمجالات تخصصك: ${bot.expertise}`:'';
   return `أنت مساعد شخصي ذكي اسمك "${botName}".${bot.tagline?'\nوصفك: '+bot.tagline:''}
